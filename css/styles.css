@@ -1,0 +1,23 @@
+body{
+  font-family: Arial;
+  background-color: #555555;
+}
+h1 {
+        color: #ffffff;
+        margin: 0
+}
+h2 {
+        color: #cccccc;
+        margin: 0
+}
+.principal {
+  margin: 0 auto;
+  width: 820px;
+}
+
+
+.menu-superior {
+  background-color: #ff8700;
+  color: #eeeeee;
+}
+

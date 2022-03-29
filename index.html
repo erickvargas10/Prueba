@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>EJERCICIO PAGINA WEB</title>
+         <link rel="stylesheet" type="text/css" href="css/styles.css"><!--cargar archivo css-->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+
+    <script type="text/javascript">
+    function valideKey(evt){
+      
+      var code = (evt.which) ? evt.which : evt.keyCode;
+      
+      if(code==8) { 
+        return true;
+      } else if(code>=48 && code<=57) { 
+      } else{ 
+        return false;
+      }
+    }
+    </script>
+
+
+   </head>
+   <body >
+
+    <script language="javascript">
+function mostrar()
+{
+    var reg_1=document.getElementById("reg_1");
+    var reg_2=document.getElementById("reg_2");
+    var reg_3=document.getElementById("reg_3");
+    var reg_4=document.getElementById("reg_4");
+    var reg_5=document.getElementById("reg_5");
+    var reg_6=document.getElementById("reg_6");
+    var reg_7=document.getElementById("reg_7");
+    var reg_8=document.getElementById("reg_8");
+ 
+ 
+
+    document.write(
+    "<table cellpadding='5' cellspacing='0' border='1'>" +
+    "<tr><td>Historia</td><td>Cedula</td><td>Nombre Paciente</td><td>Edad</td><td>Temperatura</td><td>Presion</td><td>Pulso</td><td>Frecuencia respiratoria</td><td>saturacion</td><td>IMC</td></tr>"+
+    "<tr><td>"+reg_1.value+"</td><td>"+reg_2.value+"</td><td>"+reg_3.value+"</td><td>"+reg_4.value+"</td> <td>"+reg_5.value+"</td><td>"+reg_6.value+"</td><td>"+reg_7.value+"</td><td>"+reg_8.value+"</td></tr></table>"
+    );
+}
+</script>
+</form>
+  <div class="principal">
+      
+         <h2>Prueba</h2>
+         <h3>Signos vitales paciente</h3>
+      <div class="menu-superior">
+<form>
+  <form action="" method="post">
+            <label for="age">Nùmero de historia:</label>
+            <input type="text" name="age" id="reg_1" onkeypress="return valideKey(event);" />
+  </form>
+  <form action="" method="post">
+            <label for="age">Cedula:</label>
+            <input type="text" name="age" id="reg_2" onkeypress="return valideKey(event);" />
+  </form>
+
+  <form action="" method="post">
+            <label for="age">Nombre Paciente:</label>
+<input type="text" id="reg_3"style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();">
+  </form>
+
+    <form action="" method="post">
+            <label for="age">Edad:</label>
+            <input type="date" id="reg_4" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+  </form>
+      <form action="" method="post">
+            <label for="age">Temperatura:</label>
+            <input value="" type="double" step="any" id="reg_5">
+          
+  </form>
+  
+   <form action="" method="post">
+            <label for="age">Presiòn arterial:</label>
+            <input type="text" name="age" id="reg_6" onkeypress="return valideKey(event);" />
+  </form>
+  
+   <form action="" method="post">
+            <label for="age">Pulso:</label>
+            <input type="text" name="age" id="reg_7"onkeypress="return valideKey(event);" />
+  </form>
+
+     <form action="" method="post">
+            <label for="age">Frecuencia respiratoria:</label>
+            <input type="text" name="age" id="reg_8"onkeypress="return valideKey(event);" />
+  </form>
+
+     <form action="" method="post">
+            <label for="age">Saturacion:</label>
+            <input type="text" name="age" id="age" onkeypress="return valideKey(event);" />
+  </form>
+       <form action="" method="post">
+            <label for="age">Peso KG:</label>
+              <input value="" type="double" step="any" maxlength="5" id = "kg">
+  </form>
+
+     <form action="" method="post">
+            <label for="age">TallaCm:</label>
+             <input value="" type="double" step="any" maxlength="6" id="m">
+  </form>
+     <form action="" method="post">
+  <button id="calc">Calcular</button>
+<p>IMC: <span id="imc" id="reg_9"></span></p>
+<p>Lectura: <span id="lectura" ></span></p>
+  </form>
+  
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+
+</form>
+</form>
+
+<input type="button" onclick="mostrar()" value="mostrar en tabla"/>
+      </div>
+               
+  <!-- SCRIPT PARA CALCULAR IMC -->
+<script type="text/javascript">
+  calc = document.getElementById("calc");
+  kg = document.getElementById("kg");
+  m = document.getElementById("m");
+  imc = document.getElementById("imc");
+  lectura = document.getElementById("lectura");
+
+  calc.onclick = function(){
+    if(kg.value!="" && m.value!=""){
+      imcx = (kg.value / (m.value* m.value));
+      imc.innerHTML = imcx
+      console.log(imcx);
+
+      if(imcx<18.5){ lectura.innerHTML = "Peso inferior al normal"; }
+      else if(imcx>=18.5 && imcx<=24.9){ lectura.innerHTML = "Peso normal"; }
+      else if(imcx>=25 && imcx<=29.9){ lectura.innerHTML = "Peso superior al normal"; }
+      else if(imcx>30){ lectura.innerHTML = "Obesidad"; }
+
+    }else{
+      alert("Debes ingresar peso y altura.")
+    }
+
+  };
+</script>         
+        <script src="/js/myScript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+<html>
